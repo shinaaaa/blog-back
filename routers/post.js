@@ -24,7 +24,7 @@ router.post("/", auth.authenticate(), async (req, res, next) => {
   for (const tag_id of tags) {
     const tag = await Tag.findById(tag_id);
     tag.posts.push(post._id);
-    // await tag.save();
+    await tag.save();
   }
   res.json({ result: true });
   next();

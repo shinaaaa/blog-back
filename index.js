@@ -9,8 +9,7 @@ const comment = require('./routers/comment');
 const auth = require('./common/auth')();
 const cors = require('cors');
 
-const dbURI =
-  process.env.MONGODB_URI || 'mongodb://70.12.113.50:27017/blog-dev';
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/blog-dev';
 app.use(Helmet());
 app.use(cors());
 app.use((req, res, next) => {
